@@ -8,9 +8,11 @@ import { SwatchesPicker } from 'react-color';
 
 const Home = () => {
 
+	// console.log({fg: window.innerHeight});
+
 	var canvasRef = "";
 	const [ brushColor, setBrushColor ] = useState("#000000");
-	const [ brushSize, setBrushSize ] = useState(5);
+	const [ brushSize, setBrushSize ] = useState(2);
 	const [ showColorPicker, setShowColorPicker ] = useState(false);
 
 	const handleColorChange = colorValue => {
@@ -61,10 +63,12 @@ const Home = () => {
 									</IonCol>
 								</>
 							}
+
+							
 						</IonRow>
 					</IonGrid>
 				</div>
-				<CanvasDraw brushRadius={ brushSize } lazyRadius={ 0 } canvasHeight={ window.innerHeight } canvasWidth={ window.innerWidth } brushColor={ brushColor } ref={ canvasDraw => (canvasRef = canvasDraw) } />
+				<CanvasDraw brushRadius={ brushSize } lazyRadius={ 0 } canvasHeight={ window.innerHeight + 5000 } canvasWidth={ window.innerWidth } brushColor={ brushColor } ref={ canvasDraw => (canvasRef = canvasDraw) } />
 			</IonContent>
 		</IonPage>
 	);
